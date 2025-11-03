@@ -10,10 +10,6 @@ export default function ProductsPage() {
           description="沉浸式中文學習平台，結合影音與 AI。"
         />
         <ProductCard
-          title="VioMind"
-          description="AI 影音筆記與創作工具，協助創作者整理知識。"
-        />
-        <ProductCard
           title="NiHao.AI Voice Coach"
           description="AI 聲調與發音訓練平台，融合文化情境學習。"
         />

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 type HeroSectionProps = {
   titleEn: string
@@ -16,6 +17,10 @@ export default function HeroSection({ titleEn, subtitleZh, description, ctaLabel
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-gold/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-brand-red/10 blur-3xl" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-zinc-50" />
+        {/* 大型透明 Logo 背景（置右偏下，僅裝飾） */}
+        <div aria-hidden className="pointer-events-none select-none absolute right-[-6%] bottom-[-6%] opacity-10">
+          <Image src="/src/logo.png" alt="" width={520} height={520} priority />
+        </div>
       </div>
 
       <div className="container-default relative py-20 sm:py-28">
