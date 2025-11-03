@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import LanguageToggle from '@/components/LanguageToggle'
+import type { Route } from 'next'
 
 export default function Navbar() {
   return (
@@ -15,12 +16,12 @@ export default function Navbar() {
           </div>
         </Link>
         <ul className="flex items-center gap-2 sm:gap-4 text-sm">
-          {[
-            { href: '/', label: 'Home' },
-            { href: '/about', label: 'About' },
-            { href: '/products', label: 'Products' },
-            { href: '/contact', label: 'Contact' },
-          ].map((item) => (
+          {([
+            { href: '/' as Route, label: 'Home' },
+            { href: '/about' as Route, label: 'About' },
+            { href: '/products' as Route, label: 'Products' },
+            { href: '/contact' as Route, label: 'Contact' },
+          ]).map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}

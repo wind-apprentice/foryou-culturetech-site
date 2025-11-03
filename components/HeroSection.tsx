@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Route } from 'next'
 
 type HeroSectionProps = {
   titleEn: string
   subtitleZh: string
   description: string
   ctaLabel: string
-  ctaHref: string
+  ctaHref: Route
 }
 
 export default function HeroSection({ titleEn, subtitleZh, description, ctaLabel, ctaHref }: HeroSectionProps) {
