@@ -1,39 +1,47 @@
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## ForYou Culture & Tech（福語文化科技）公司網站
 
-## Getting Started
+以 Next.js App Router + Tailwind CSS 建置，主題色：紅（#C8002A）、金（#C9A35A）、白（#FFFFFF）。字體使用 Inter（英文）與 Noto Sans TC（中文）。
 
-First, run the development server:
+### 安裝與啟動
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+瀏覽器開啟 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 專案結構
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx          # 全域版型：字體、Navbar、Footer
+  page.tsx            # 首頁
+  about/page.tsx      # 關於我們
+  products/page.tsx   # 產品與服務
+  contact/page.tsx    # 聯絡我們
+components/
+  Navbar.tsx
+  Footer.tsx
+  HeroSection.tsx
+  ProductCard.tsx
+styles/
+  globals.css         # Tailwind 與全域樣式
+```
 
-## Learn More
+### 可替換區塊
+- `components/HeroSection.tsx`：Hero 文案與 CTA。
+- `components/ProductCard.tsx`：產品卡片（可替換為 next/image）。
+- `app/contact/page.tsx`：表單 `action` 可替換為 Formspree 實際 endpoint。
+- `tailwind.config.ts`：品牌色與字體設定。
 
-To learn more about Next.js, take a look at the following resources:
+### 佈景與設計
+- 導覽列固定於頂部（`Navbar.tsx`）。
+- 頁尾顯示公司資訊與 Email（`Footer.tsx`）。
+- 響應式：使用容器與格線（`container-default`、`grid`）。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 部署
+可使用 Vercel 部署；本地建置請先 `npm run build` 後 `npm start`。
 
 
