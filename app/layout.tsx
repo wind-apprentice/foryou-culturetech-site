@@ -33,8 +33,9 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   icons: {
-    icon: '/src/logo.png',
-    apple: '/src/logo.png',
+    icon: '/favicon.ico', // 請將 logo 存成 app/favicon.ico 或 public/favicon.ico
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png', // 可選：180x180 的 PNG
   },
 }
 
