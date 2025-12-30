@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Route } from 'next'
 
 type ProductCardProps = {
   title: string
   description: string
   imageSrc?: string
   imageAlt?: string
-  href?: string
+  href?: string | Route
   externalLink?: boolean
 }
 
@@ -36,15 +37,15 @@ export default function ProductCard({
   )
 
   if (href) {
-    if (externalLink) {
+    if (externalLink || href.startsWith('http')) {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        <a href={href as string} target="_blank" rel="noopener noreferrer" className="block">
           {content}
         </a>
       )
     }
     return (
-      <Link href={href} className="block">
+      <Link href={href as Route} className="block">
         {content}
       </Link>
     )
