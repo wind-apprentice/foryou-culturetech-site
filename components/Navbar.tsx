@@ -12,7 +12,7 @@ export default function Navbar() {
           <Image src="/src/logo.png" alt="ForYou logo" width={44} height={44} className="rounded-sm" />
           <div className="flex flex-col leading-none">
             <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-900">ForYou</span>
-            <span className="hidden sm:block text-[10px] text-zinc-500">Culture & Tech</span>
+            <span className="hidden sm:block text-[10px] text-zinc-500">Mandarin</span>
           </div>
         </Link>
         <ul className="flex items-center gap-2 sm:gap-4 text-sm">

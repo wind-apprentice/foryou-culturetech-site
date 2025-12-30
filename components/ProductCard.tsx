@@ -1,16 +1,32 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 type ProductCardProps = {
   title: string
   description: string
-  // 可替換為實際圖片連結或 <Image/>
+  imageSrc?: string
   imageAlt?: string
+  href?: string
+  externalLink?: boolean
 }
 
-export default function ProductCard({ title, description, imageAlt = 'product placeholder' }: ProductCardProps) {
-  return (
+export default function ProductCard({ 
+  title, 
+  description, 
+  imageSrc,
+  imageAlt = 'product placeholder',
+  href,
+  externalLink = false
+}: ProductCardProps) {
+  const content = (
     <div className="group rounded-2xl border border-zinc-200 bg-white/80 backdrop-blur-sm shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
-      {/* 佔位圖區塊，可換成 next/image */}
-      <div className="h-40 bg-gradient-to-tr from-zinc-100 to-zinc-50 flex items-center justify-center text-xs text-zinc-600">
-        {imageAlt}
+      {/* 圖片區塊 */}
+      <div className="h-40 bg-gradient-to-tr from-zinc-100 to-zinc-50 flex items-center justify-center overflow-hidden">
+        {imageSrc ? (
+          <Image src={imageSrc} alt={imageAlt} width={200} height={160} className="object-contain" />
+        ) : (
+          <span className="text-xs text-zinc-600">{imageAlt}</span>
+        )}
       </div>
       <div className="p-5">
         <h3 className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">{title}</h3>
@@ -18,6 +34,23 @@ export default function ProductCard({ title, description, imageAlt = 'product pl
       </div>
     </div>
   )
+
+  if (href) {
+    if (externalLink) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+          {content}
+        </a>
+      )
+    }
+    return (
+      <Link href={href} className="block">
+        {content}
+      </Link>
+    )
+  }
+
+  return content
 }
 
 

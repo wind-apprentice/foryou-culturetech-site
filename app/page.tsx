@@ -39,11 +39,15 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <ProductCard
             title="ForYou Mandarin"
-            description="影音與 AI 結合的中文學習平台"
+            description={lang === 'en' ? 'Learn Chinese immersively with real videos!' : '看真實影片 沉浸式學中文!'}
+            imageSrc="/foryou_mandarin_logo.png"
+            imageAlt="ForYou Mandarin Logo"
+            href="https://foryou-mandarin.com"
+            externalLink={true}
           />
           <ProductCard
             title="NiHao.AI Voice Coach"
-            description="AI 聲調與發音訓練工具"
+            description={lang === 'en' ? 'AI tone and pronunciation training tool' : 'AI 聲調與發音訓練工具'}
           />
         </div>
       </section>
