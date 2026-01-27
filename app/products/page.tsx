@@ -15,12 +15,12 @@ export default function ProductsPage() {
           description={lang === 'en' ? 'Learn Chinese immersively with real videos!' : '看真實影片 沉浸式學中文!'}
           imageSrc="/foryou_mandarin_logo.png"
           imageAlt="ForYou Mandarin Logo"
-          href="https://foryou-mandarin.com"
-          externalLink={true}
+          href="/products/foryou-mandarin"
         />
         <ProductCard
           title="NiHao.AI Voice Coach"
           description={lang === 'en' ? 'AI tone and pronunciation training platform with cultural context learning.' : 'AI 聲調與發音訓練平台，融合文化情境學習。'}
+          href="/products/nihao-voice-coach"
         />
       </div>
     </div>
