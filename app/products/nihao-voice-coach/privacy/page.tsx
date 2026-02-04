@@ -21,10 +21,10 @@ export default function NiHaoVoiceCoachPrivacyPage() {
           If you have any questions in the meantime, please contact us at:
           <br />
           <a
-            href="mailto:apple@foryouculturetech.co"
+            href="mailto:contact@foryouculturetech.com"
             className="text-sky-600 hover:text-sky-700 underline underline-offset-4"
           >
-            apple@foryouculturetech.co
+            contact@foryouculturetech.com
           </a>
         </p>
       </div>
