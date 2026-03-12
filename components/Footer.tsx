@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div>
               <p className="font-medium text-gray-900">福語文化有限公司</p>
-              <p>© 2025 ForYou Mandarin Co., Ltd.</p>
+              <p>© 2026 ForYou Mandarin Co., Ltd.</p>
             </div>
             <a href="mailto:contact@foryouculturetech.com" className="text-brand-red hover:opacity-80 transition">
               contact@foryouculturetech.com
