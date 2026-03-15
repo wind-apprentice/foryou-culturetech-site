@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers'
 import Link from 'next/link'
+import DeleteAccountModal from '@/components/DeleteAccountModal'
 
 export default function ForYouMandarinProductPage() {
   const lang = cookies().get('lang')?.value === 'en' ? 'en' as const : 'zh'
@@ -27,7 +28,7 @@ export default function ForYouMandarinProductPage() {
           {lang === 'en' ? 'Visit ForYou Mandarin Website' : '前往 ForYou Mandarin 官方網站'}
         </a>
 
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 flex flex-col gap-2">
           <Link
             href="/products/foryou-mandarin/privacy"
             className="underline underline-offset-4 hover:text-gray-900"
@@ -36,6 +37,7 @@ export default function ForYouMandarinProductPage() {
               ? 'View ForYou Mandarin Privacy Policy'
               : '查看 ForYou Mandarin 隱私權政策'}
           </Link>
+          <DeleteAccountModal lang={lang} />
         </div>
       </div>
     </div>
